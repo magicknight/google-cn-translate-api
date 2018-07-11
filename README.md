@@ -22,7 +22,7 @@ From automatic language detection to English:
 ``` js
 const translate = require('google-translate-api');
 
-translate('Ik spreek Engels', {to: 'en'}).then(res => {
+translate('Ik spreek Engels', {to: 'en', proxy: {host: host, port: port}}).then(res => {
     console.log(res.text);
     //=> I speak English
     console.log(res.from.language.iso);
@@ -35,7 +35,7 @@ translate('Ik spreek Engels', {to: 'en'}).then(res => {
 From English to Dutch with a typo:
 
 ``` js
-translate('I spea Dutch!', {from: 'en', to: 'nl'}).then(res => {
+translate('I spea Dutch!', {from: 'en', to: 'nl', proxy: {host: host, port: port}}).then(res => {
     console.log(res.text);
     //=> Ik spreek Nederlands!
     console.log(res.from.text.autoCorrected);
@@ -52,7 +52,7 @@ translate('I spea Dutch!', {from: 'en', to: 'nl'}).then(res => {
 Sometimes, the API will not use the auto corrected text in the translation:
 
 ``` js
-translate('I spea Dutch!', {from: 'en', to: 'nl'}).then(res => {
+translate('I spea Dutch!', {from: 'en', to: 'nl', proxy: {host: host, port: port}}).then(res => {
     console.log(res);
     console.log(res.text);
     //=> Ik spea Nederlands!
@@ -98,6 +98,18 @@ The language in which the text should be translated. Must be one of the codes/na
 Type: `boolean` Default: `false`
 
 If `true`, the returned object will have a `raw` property with the raw response (`string`) from Google Translate.
+
+##### proxy
+
+Type: `object` Default: `null`
+
+The proxy using for sending request to google api. for example, 
+```javascript
+{
+    host: 1.1.1.1,
+    port: 3128
+}
+```
 
 ### Returns an `object`:
 
