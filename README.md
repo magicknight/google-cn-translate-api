@@ -1,6 +1,6 @@
-# google-translate-api [![Build Status](https://travis-ci.org/matheuss/google-translate-api.svg?branch=master)](https://travis-ci.org/matheuss/google-translate-api) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) [![Coverage Status](https://coveralls.io/repos/github/matheuss/google-translate-api/badge.svg?branch=master)](https://coveralls.io/github/matheuss/google-translate-api?branch=master) [![Known Vulnerabilities](https://snyk.io/test/npm/google-translate-api/badge.svg)](https://snyk.io/test/npm/google-translate-api)
+# google-cn-translate-api [![Build Status](https://travis-ci.org/magicknight/google-cn-translate-api.svg?branch=master)](https://travis-ci.org/magicknight/google-cn-translate-api) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) [![Coverage Status](https://coveralls.io/repos/github/magicknight/google-cn-translate-api/badge.svg?branch=master)](https://coveralls.io/github/magicknight/google-cn-translate-api?branch=master) [![Known Vulnerabilities](https://snyk.io/test/npm/google-cn-translate-api/badge.svg)](https://snyk.io/test/npm/google-cn-translate-api)
 
-A **free** and **unlimited** API for Google Translate :dollar::no_entry_sign:
+A **free** and **unlimited** API for Google.cn Translate :dollar::no_entry_sign:
 
 ## Features 
 
@@ -12,7 +12,7 @@ A **free** and **unlimited** API for Google Translate :dollar::no_entry_sign:
 ## Install 
 
 ```
-npm install --save google-translate-api
+npm install --save google-cn-translate-api
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install --save google-translate-api
 From automatic language detection to English:
 
 ``` js
-const translate = require('google-translate-api');
+const translate = require('google-cn-translate-api');
 
 translate('Ik spreek Engels', {to: 'en', proxy: {host: host, port: port}}).then(res => {
     console.log(res.text);
@@ -85,13 +85,13 @@ Type: `object`
 
 Type: `string` Default: `auto`
 
-The `text` language. Must be `auto` or one of the codes/names (not case sensitive) contained in [languages.js](https://github.com/matheuss/google-translate-api/blob/master/languages.js)
+The `text` language. Must be `auto` or one of the codes/names (not case sensitive) contained in [languages.js](https://github.com/magicknight/google-cn-translate-api/blob/master/languages.js)
 
 ##### to
 
 Type: `string` Default: `en`
 
-The language in which the text should be translated. Must be one of the codes/names (not case sensitive) contained in [languages.js](https://github.com/matheuss/google-translate-api/blob/master/languages.js).
+The language in which the text should be translated. Must be one of the codes/names (not case sensitive) contained in [languages.js](https://github.com/magicknight/google-cn-translate-api/blob/master/languages.js).
 
 ##### raw
 
@@ -104,10 +104,10 @@ If `true`, the returned object will have a `raw` property with the raw response 
 Type: `object` Default: `null`
 
 The proxy using for sending request to google api. for example, 
-```javascript
+```json
 {
-    host: 1.1.1.1,
-    port: 3128
+    "host": "1.1.1.1",
+    "port": "3128"
 }
 ```
 
@@ -117,7 +117,7 @@ The proxy using for sending request to google api. for example,
 - `from` *(object)*
   - `language` *(object)*
     - `didYouMean` *(boolean)* - `true` if the API suggest a correction in the source language
-    - `iso` *(string)* - The [code of the language](https://github.com/matheuss/google-translate-api/blob/master/languages.js) that the API has recognized in the `text`
+    - `iso` *(string)* - The [code of the language](https://github.com/magicknight/google-cn-translate-api/blob/master/languages.js) that the API has recognized in the `text`
   - `text` *(object)*
     - `autoCorrected` *(boolean)* – `true` if the API has auto corrected the `text`
     - `value` *(string)* – The auto corrected `text` or the `text` with suggested corrections
@@ -138,7 +138,7 @@ Otherwise, it will be an empty `string` (`''`).
 
 ## Related
 
-- [`vertaler`](https://github.com/matheuss/vertaler) – CLI for this module
+- [`vertaler`](https://github.com/magicknight/vertaler) – CLI for this module
 
 ## License
 
