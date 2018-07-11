@@ -142,4 +142,4 @@ Otherwise, it will be an empty `string` (`''`).
 
 ## License
 
-MIT © [Matheus Fernandes](http://matheus.top)
+MIT © [magicknight](http://matheus.top)
